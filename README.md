@@ -1,2 +1,4 @@
-# Firefox-BetterHistory
-Adds a better Browser History, currently aimed to resemble the Chromium one
+hello, I hope I won't forget about the readme..\
+Have great day :3
+
+discord: Squip9946#0
