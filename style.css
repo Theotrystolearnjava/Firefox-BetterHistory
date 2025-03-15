@@ -1,12 +1,47 @@
+:root {
+	color-scheme: light dark;
+	--border: #e0e0e6;
+	--border_opacity35: rgba(224, 224, 230, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary_background_color: #2b2a33;
+		--secondary_background_color: #42414d;
+		--tertiary_background_color: #1c1b22;
+		--primary_color: #fbfbfe;
+		--secondary_color: #cfcfd8;
+		--error_color: #ff9aa2;
+		--url_color: #0060df;
+		--url_color_hover: #0250bb;
+		--url_color_visited: #b833e1;
+		--url_color_hover_visited: #952bb9;
+	}
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--primary_background_color: #f9f9fb;
+		--secondary_background_color: #ffffff;
+		--tertiary_background_color: #f0f0f4;
+		--primary_color: #15141a;
+		--secondary_color: #5b5b66;
+		--error_color: #c50042;
+		--url_color: #0060df;
+		--url_color_hover: #0250bb;
+		--url_color_visited: #b833e1;
+		--url_color_hover_visited: #952bb9;
+	}
+}
 @font-face {
 	font-family: Metropolis;
 	src: url("fonts/Metropolis-Regular.otf") format("opentype");
 }
 
 body {
-	background-color: #2b2a33;
+	background-color: var(--primary_background_color);
 	font-family: Metropolis, Arial, sans-serif;
-	color: #f0f0f4;
+	font-size: 12px;
+	color: var(--primary_color);
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -18,26 +53,50 @@ body {
 	padding: 20px;
 	box-sizing: border-box;
 }
-ul {
-	list-style-type: none;
-	padding: 0;
-	overflow-y: auto;
+.search-bar {
+	font-size: 15px;
+	color: var(--primary_color);
+	background-color: var(--secondary_background_color);
+	border: 1px solid var(--border);
+	border-radius: 3px;
+	max-width: 25%;
+	transition: width 0.2s ease-in-out;
+	padding: 2px;
 }
-li {
-	 padding: 5px;
-	 background-color: #1c1b22;
-	 margin-bottom: 5px;
-	 border: 1px solid #eee;
-	 border-radius: 4px;
- }
+#historyTable {
+	margin-top: 12px;
+	width: 100%;
+	border-collapse: collapse;
+}
+#historyTable tr:hover {
+	background-color: var(--secondary_background_color);
+}
+#historyTable td {
+	padding: 3px 3px 3px 0;
+	text-align: left;
+	border-bottom: 1px solid var(--border_opacity35);
+}
+.content span {
+	font-size: 13px;
+}
 .time {
-	font-size: 12px;
-	color: #888;
 	margin-right: 5px;
+	font-size: 12px;
+	color: var(--secondary_color);
+	white-space: nowrap;
 }
 .url {
 	font-size: 12px;
-	color: blue;
+	color: var(--url_color);
 	text-decoration: underline;
-	word-break: break-all; /* Ensure long URLs wrap properly */
+	word-break: break-all;
 }
+	.url:hover {
+		color: var(--url_color_hover);
+	}
+	.url:visited {
+		color: var(--url_color_visited);
+	}
+	.url:hover:visited {
+		color: var(--url_color_hover_visited);
+	}

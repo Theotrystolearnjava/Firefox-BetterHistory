@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Search History</title>
+	<title>Browser History</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-	<ul id="historyList"></ul>
+	<div class="search-bar-div">
+		<input class="search-bar" type="search" placeholder="Search..">
+	</div>
+	<table id="historyTable">
+		<tbody>
+		<!-- History items will be added here dynamically -->
+		</tbody>
+	</table>
 </div>
 <script src="app.js"></script>
 </body>

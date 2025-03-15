@@ -10,10 +10,10 @@ browser.commands.onCommand.addListener((command) => {
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	if (message.command === 'getAllHistory') {
-		// Fetch all history data (up to a max limit of 1000 results)
+		// Fetch the most recent 1000 visited sites
 		chrome.history.search({
-			text: '',  // Empty string means no filtering
-			maxResults: 1000  // Limit the number of items fetched (adjust as necessary)
+			text: '',  // No filtering
+			maxResults: 1000
 		}, function(historyItems) {
 			sendResponse(historyItems);
 		});
